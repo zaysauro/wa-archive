@@ -1,6 +1,6 @@
-const status=document.querySelector<HTMLDivElement>("#status")!;
-async function send(type:string){const[tab]=await chrome.tabs.query({active:true,currentWindow:true});if(!tab.id||!tab.url?.startsWith("https://web.whatsapp.com/")){status.textContent="Abra o WhatsApp Web e selecione uma conversa.";return null}try{return await chrome.tabs.sendMessage(tab.id,{type})}catch{status.textContent="Recarregue a aba do WhatsApp Web após atualizar a extensão.";return null}}
-document.querySelector("#scan")?.addEventListener("click",async()=>{status.textContent="Capturando…";const r=await send("WA_ARCHIVE_SCAN");if(r)status.textContent=r.ok?String(r.added)+" novas de "+String(r.total)+" mensagens visíveis.":"Falha: "+r.error});
-document.querySelector("#watch")?.addEventListener("click",async()=>{const r=await send("WA_ARCHIVE_WATCH");if(r)status.textContent=r.ok?"Captura contínua ativa nesta conversa.":"Falha: "+r.error});
-document.querySelector("#stop")?.addEventListener("click",async()=>{const r=await send("WA_ARCHIVE_STOP");if(r)status.textContent="Captura contínua parada."});
+const statusEl=document.querySelector<HTMLDivElement>("#statusEl")!;
+async function send(type:string){const[tab]=await chrome.tabs.query({active:true,currentWindow:true});if(!tab.id||!tab.url?.startsWith("https://web.whatsapp.com/")){statusEl.textContent="Abra o WhatsApp Web e selecione uma conversa.";return null}try{return await chrome.tabs.sendMessage(tab.id,{type})}catch{statusEl.textContent="Recarregue a aba do WhatsApp Web após atualizar a extensão.";return null}}
+document.querySelector("#scan")?.addEventListener("click",async()=>{statusEl.textContent="Capturando…";const r=await send("WA_ARCHIVE_SCAN");if(r)statusEl.textContent=r.ok?String(r.added)+" novas de "+String(r.total)+" mensagens visíveis.":"Falha: "+r.error});
+document.querySelector("#watch")?.addEventListener("click",async()=>{const r=await send("WA_ARCHIVE_WATCH");if(r)statusEl.textContent=r.ok?"Captura contínua ativa nesta conversa.":"Falha: "+r.error});
+document.querySelector("#stop")?.addEventListener("click",async()=>{const r=await send("WA_ARCHIVE_STOP");if(r)statusEl.textContent="Captura contínua parada."});
 document.querySelector("#dashboard")?.addEventListener("click",()=>chrome.tabs.create({url:chrome.runtime.getURL("dashboard.html")}));
