@@ -1,3 +1,3 @@
 export type MessageDirection="incoming"|"outgoing"|"unknown";
-export interface ArchivedMessage{id:string;conversationId:string;conversationTitle:string;sender:string;direction:MessageDirection;text:string;timestampLabel:string;capturedAt:number}
+export interface ArchivedMessage{id:string;conversationId:string;conversationTitle:string;sender:string;direction:MessageDirection;text:string;timestampLabel:string;messageAt?:number;capturedAt:number}
 export interface ConversationSummary{id:string;title:string;messageCount:number;incoming:number;outgoing:number;participants:Record<string,number>;firstCapturedAt?:number;lastCapturedAt?:number}
