@@ -5,7 +5,7 @@ Local-first browser extension for archiving and analyzing conversations visible 
 > Early development version. WA Archive is independent and is not affiliated with WhatsApp or Meta.
 
 ## Current MVP
-Detects the open WhatsApp Web conversation, parses messages currently rendered in the DOM, stores normalized records in IndexedDB, deduplicates them with deterministic IDs, and exposes a local dashboard with basic counts and JSON export.
+Detects the open WhatsApp Web conversation, parses messages currently rendered in the DOM, stores normalized records in IndexedDB, deduplicates them with deterministic IDs, and exposes a local dashboard. Continuous capture can be explicitly enabled for the currently open conversation so newly rendered messages are archived as they appear.
 
 ## Development
 ```bash
@@ -15,7 +15,7 @@ npm run build
 Load `dist/` as an unpacked Chromium extension and reload WhatsApp Web.
 
 ## Roadmap
-- Progressive historical loading
+- User-controlled progressive historical loading
 - Resilient selector adapters
 - Replies, reactions and media metadata
 - Conversation analytics and response-time metrics
