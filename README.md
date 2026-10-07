@@ -1,31 +1,42 @@
 # WA Archive
 
-Local-first browser extension for archiving and analyzing conversations visible to the authenticated user in WhatsApp Web.
+Extensão local-first para arquivar e analisar conversas do WhatsApp Web.
 
-> Early development version. WA Archive is independent and is not affiliated with WhatsApp or Meta.
+## Fontes de dados
 
-## Current MVP
-Detects the open WhatsApp Web conversation, parses messages currently rendered in the DOM, stores normalized records in IndexedDB, deduplicates them with deterministic IDs, and exposes a local dashboard. Continuous capture can be explicitly enabled for the currently open conversation so newly rendered messages are archived as they appear.
+- Captura das mensagens renderizadas no WhatsApp Web.
+- Importação local de exportações oficiais do WhatsApp em TXT.
+- Importação local de ZIPs contendo TXT; mídia é ignorada.
 
-## Development
+TXT, ZIP e conteúdo das conversas **não são enviados para servidor, API, telemetria ou analytics externo**. O processamento e o IndexedDB ficam no navegador.
+
+## Desenvolvimento
+
 ```bash
 npm install
+npm test
 npm run build
 ```
-Load `dist/` as an unpacked Chromium extension and reload WhatsApp Web.
 
-## Roadmap
-- User-controlled progressive historical loading
-- Resilient selector adapters
-- Replies, reactions and media metadata
-- Conversation analytics and response-time metrics
-- Group connection/network graph
-- Search and timeline
-- CSV, TXT and HTML exports
-- Firefox packaging
+Carregue a pasta `dist` como extensão descompactada no Chrome.
 
-## Privacy
-Conversation content is processed and stored locally. The MVP has no server-side conversation storage or telemetry endpoint.
+## Teste manual de importação
 
-## License
-MIT
+Use `fixtures/demo-chat.txt`. Ele contém somente mensagens fictícias entre Bruno e Cliente Teste, distribuídas em vários dias, horários e sessões.
+
+## Arquitetura
+
+- Manifest V3 + TypeScript + Vite.
+- Content script coleta o DOM do WhatsApp e envia mensagens ao service worker.
+- Service worker persiste captura Web no IndexedDB da extensão.
+- Dashboard e importador TXT/ZIP usam o mesmo IndexedDB.
+- Fingerprint determinístico evita duplicação entre importações repetidas e captura Web quando conversa, timestamp, remetente e texto normalizados coincidem.
+- Sessões usam intervalo configurável `SESSION_GAP_MS`, atualmente 4 horas.
+
+## Privacidade
+
+Sem backend. Sem upload de conversas. Sem código remoto. Sem analytics externo.
+
+Projeto independente, não afiliado ao WhatsApp ou à Meta.
+
+MIT License.
