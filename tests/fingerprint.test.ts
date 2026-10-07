@@ -1,0 +1,1 @@
+import {describe,expect,it} from "vitest";import {messageFingerprint} from "../src/shared/fingerprint";describe("fingerprint",()=>{it("is deterministic and normalizes whitespace/case",()=>{expect(messageFingerprint("c",1,"Bruno","Olá   mundo")).toBe(messageFingerprint("c",1,"bruno","olá mundo"))})});
