@@ -1,1 +1,3 @@
-chrome.runtime.onInstalled.addListener(()=>console.info("WA Archive installed"));
+import {saveMessages,upsertConversation} from "../database/db";import type {ArchivedMessage} from "../shared/types";
+chrome.runtime.onInstalled.addListener(()=>console.info("[WA Archive] installed"));
+chrome.runtime.onMessage.addListener((message,_sender,sendResponse)=>{if(message?.type==="WA_ARCHIVE_SAVE_MESSAGES"){const rows=message.messages as ArchivedMessage[];saveMessages(rows).then(async result=>{const first=rows[0];if(first)await upsertConversation({id:first.conversationId,title:first.conversationTitle,createdAt:first.capturedAt,updatedAt:Date.now()});console.info("[WA Archive] Saved",result.added,"new messages; skipped",result.duplicates,"duplicates");sendResponse({ok:true,...result})}).catch(error=>sendResponse({ok:false,error:String(error)}));return true}});
