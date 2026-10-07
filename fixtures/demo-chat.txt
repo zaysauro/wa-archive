@@ -1,0 +1,68 @@
+06/10/2026, 08:00 - Messages and calls are end-to-end encrypted.
+06/10/2026, 08:05 - Bruno: Bom dia!
+06/10/2026, 08:07 - Cliente Teste: Bom dia, tudo bem?
+06/10/2026, 08:08 - Bruno: Tudo certo 😄
+06/10/2026, 08:10 - Bruno: Estou testando o WA Archive.
+06/10/2026, 08:14 - Cliente Teste: Legal!
+06/10/2026, 08:15 - Cliente Teste: Como funciona?
+06/10/2026, 08:18 - Bruno: Ele guarda a conversa localmente
+e transforma o histórico em analytics.
+06/10/2026, 08:20 - Cliente Teste: Interessante.
+06/10/2026, 08:22 - Bruno: olha isso:
+https://example.com/teste?a=1:b=2
+06/10/2026, 13:30 - Cliente Teste: Voltando agora.
+06/10/2026, 13:38 - Bruno: Tranquilo.
+06/10/2026, 13:40 - Cliente Teste: Essa já é outra sessão?
+06/10/2026, 13:42 - Bruno: Sim, passaram mais de quatro horas.
+07/10/2026, 09:00 - Bruno: Bom dia de novo.
+07/10/2026, 09:25 - Cliente Teste: Bom dia!
+07/10/2026, 09:27 - Bruno: Hoje a resposta demorou um pouco.
+07/10/2026, 09:28 - Cliente Teste: Verdade.
+07/10/2026, 12:00 - Bruno: Mensagem com acentuação: ação, coração, informação.
+07/10/2026, 12:02 - Cliente Teste: Funcionou 👍
+07/10/2026, 18:30 - Cliente Teste: Boa noite.
+07/10/2026, 18:31 - Bruno: Boa noite!
+08/10/2026, 07:45 - Cliente Teste: Começando cedo hoje.
+08/10/2026, 07:50 - Bruno: Pois é.
+08/10/2026, 07:51 - Bruno: Duas mensagens seguidas.
+08/10/2026, 08:03 - Cliente Teste: Respondi ao último bloco.
+08/10/2026, 08:04 - Bruno: Exatamente.
+08/10/2026, 14:30 - Bruno: Nova sessão da tarde.
+08/10/2026, 14:35 - Cliente Teste: Presente.
+08/10/2026, 14:36 - Bruno: Ótimo.
+09/10/2026, 10:00 - Cliente Teste: Teste de mensagem
+com três linhas
+e uma terceira linha.
+09/10/2026, 10:05 - Bruno: Recebido.
+09/10/2026, 10:06 - Cliente Teste: Dois pontos no conteúdo: item: valor.
+09/10/2026, 10:08 - Bruno: Continua sendo uma mensagem.
+09/10/2026, 16:30 - Cliente Teste: Outra sessão.
+09/10/2026, 16:45 - Bruno: Resposta em quinze minutos.
+10/10/2026, 09:10 - Bruno: Sexta conversa fictícia.
+10/10/2026, 09:11 - Cliente Teste: Sem dados reais.
+10/10/2026, 09:12 - Bruno: Perfeito.
+10/10/2026, 13:45 - Cliente Teste: Passaram quatro horas.
+10/10/2026, 13:50 - Bruno: Nova sessão.
+11/10/2026, 11:00 - Cliente Teste: Domingo de teste.
+11/10/2026, 11:02 - Bruno: Analytics por dia.
+11/10/2026, 11:04 - Cliente Teste: Analytics por horário.
+11/10/2026, 11:06 - Bruno: E tempo de resposta.
+11/10/2026, 17:30 - Bruno: Sessão da noite.
+11/10/2026, 17:40 - Cliente Teste: Dez minutos.
+12/10/2026, 08:00 - Cliente Teste: Feriado fictício para o teste.
+12/10/2026, 08:01 - Bruno: Só para distribuir datas.
+12/10/2026, 08:03 - Cliente Teste: Certo.
+12/10/2026, 12:30 - Bruno: Mais uma sessão.
+12/10/2026, 12:35 - Cliente Teste: Cinco minutos.
+13/10/2026, 09:00 - Bruno: Testando busca por palavra.
+13/10/2026, 09:01 - Cliente Teste: palavra encontrada.
+13/10/2026, 15:00 - Cliente Teste: Nova sessão depois do almoço.
+13/10/2026, 15:03 - Bruno: Três minutos.
+14/10/2026, 08:30 - Bruno: Penúltimo dia.
+14/10/2026, 08:35 - Cliente Teste: Tudo certo.
+14/10/2026, 13:00 - Cliente Teste: Outra sessão.
+14/10/2026, 13:20 - Bruno: Resposta demorada.
+15/10/2026, 09:00 - Cliente Teste: Último dia do arquivo demo.
+15/10/2026, 09:01 - Bruno: Importação pronta.
+15/10/2026, 09:02 - Cliente Teste: Dashboard alimentado.
+15/10/2026, 09:03 - Bruno: Fim do teste 🚀
