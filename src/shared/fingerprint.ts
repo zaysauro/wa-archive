@@ -1,0 +1,4 @@
+const normalize=(value:string)=>value.normalize("NFKC").replace(/\s+/g," ").trim().toLocaleLowerCase();
+export function stableHash(value:string){let h1=0x811c9dc5,h2=0x9e3779b9;for(let i=0;i<value.length;i++){const c=value.charCodeAt(i);h1=Math.imul(h1^c,0x01000193);h2=Math.imul(h2^c,0x85ebca6b)}return (h1>>>0).toString(36)+(h2>>>0).toString(36)}
+export const conversationKey=(title:string)=>stableHash(normalize(title));
+export function messageFingerprint(conversationId:string,timestamp:number|undefined,sender:string,text:string){return stableHash([conversationId,timestamp??0,normalize(sender),normalize(text)].join("|"))}
