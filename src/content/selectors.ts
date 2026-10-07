@@ -1,0 +1,4 @@
+export function conversationRoot(){return document.querySelector<HTMLElement>("#main")}
+export function conversationTitle(){const root=conversationRoot();return root?.querySelector<HTMLElement>("header [title]")?.getAttribute("title")?.trim()||root?.querySelector<HTMLElement>("header [aria-label]")?.getAttribute("aria-label")?.trim()||"Conversa"}
+export function messageNodes(){const root=conversationRoot();if(!root)return[];return [...root.querySelectorAll<HTMLElement>("[data-pre-plain-text]")]}
+export function directionFor(node:HTMLElement){const row=node.closest<HTMLElement>("[data-id],.message-in,.message-out");if(row?.classList.contains("message-out"))return"outgoing" as const;if(row?.classList.contains("message-in"))return"incoming" as const;return"unknown" as const}
