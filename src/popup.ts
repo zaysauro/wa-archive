@@ -8,3 +8,7 @@ document.querySelector("#watch")?.addEventListener("click",async()=>{const r=awa
 document.querySelector("#stop")?.addEventListener("click",async()=>{const r=await send("WA_ARCHIVE_STOP");if(r?.ok)state("Captura parada · WhatsApp detectado")});
 document.querySelector("#dashboard")?.addEventListener("click",()=>chrome.tabs.create({url:chrome.runtime.getURL("dashboard.html")}));
 void connect();
+document.querySelector("#history")?.addEventListener("click",async()=>{const tab=await connect();if(!tab?.id)return;state("Captura do histórico iniciada. Você pode fechar este popup.");chrome.tabs.sendMessage(tab.id,{type:"WA_ARCHIVE_HISTORY"}).then(r=>state(r.ok?"Histórico concluído: "+r.added+" novas mensagens.":"Falha: "+r.error)).catch(e=>state("Falha: "+String(e)))});
+document.querySelector("#pause")?.addEventListener("click",async()=>{const r=await send("WA_ARCHIVE_PAUSE");if(r?.ok)state("Histórico pausado")});
+document.querySelector("#resume")?.addEventListener("click",async()=>{const r=await send("WA_ARCHIVE_RESUME");if(r?.ok)state("Histórico retomado")});
+chrome.storage.local.get("waArchiveHistory").then(({waArchiveHistory:h})=>{if(h?.running)state("Histórico: "+h.added+" novas · "+h.duplicates+" repetidas · "+h.rounds+" etapas")}).catch(()=>undefined);
