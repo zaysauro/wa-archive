@@ -1,1 +1,23 @@
-{"name":"wa-archive","version":"0.2.0","private":true,"type":"module","scripts":{"dev":"vite","test":"vitest run","build":"tsc --noEmit && vite build","preview":"vite preview"},"dependencies":{"idb":"^8.0.3","jszip":"^3.10.1"},"devDependencies":{"@types/chrome":"^0.0.287","typescript":"^5.7.3","vite":"^6.1.0","vitest":"^2.1.9"}}
+{
+  "name": "wa-archive",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "test": "vitest run",
+    "build": "tsc --noEmit && vite build && esbuild src/content/index.ts --bundle --format=iife --target=chrome100 --outfile=dist/assets/content.js",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "idb": "^8.0.3",
+    "jszip": "^3.10.1"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.287",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0",
+    "vitest": "^2.1.9",
+    "esbuild": "^0.25.12"
+  }
+}
